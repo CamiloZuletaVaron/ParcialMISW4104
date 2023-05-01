@@ -1,4 +1,4 @@
-export interface Coffee{
+export default interface Coffee{
   id: number;
   nombre: string;
   tipo: string;

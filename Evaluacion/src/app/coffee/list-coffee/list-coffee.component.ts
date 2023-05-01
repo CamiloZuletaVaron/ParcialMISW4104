@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeService } from '../service/coffee.service'
-import { Coffee } from '../model/coffee';
+import Coffee from '../model/coffee';
 
 @Component({
   selector: 'app-list-coffee',
@@ -16,6 +16,10 @@ export class ListCoffeeComponent implements OnInit{
   constructor(private coffeeService: CoffeeService) { }
 
   ngOnInit(): void {
-
+    this.coffeeService.getCoffee().subscribe(resp => {
+      this.coffees = resp;
+      this.origen = resp.filter( c => c.tipo != "Blend").length;
+      this.blend = resp.filter( c => c.tipo == "Blend").length;
+    })
   }
 }
