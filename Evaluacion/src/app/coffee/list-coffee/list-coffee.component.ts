@@ -10,7 +10,7 @@ import Coffee from '../model/coffee';
 })
 export class ListCoffeeComponent implements OnInit{
   coffees: Coffee[] = [];
-  origen: number = 0;
+  origin: number = 0;
   blend: number = 0;
 
   constructor(private coffeeService: CoffeeService) { }
@@ -18,7 +18,7 @@ export class ListCoffeeComponent implements OnInit{
   ngOnInit(): void {
     this.coffeeService.getCoffee().subscribe(resp => {
       this.coffees = resp;
-      this.origen = resp.filter( c => c.tipo != "Blend").length;
+      this.origin = resp.filter( c => c.tipo != "Blend").length;
       this.blend = resp.filter( c => c.tipo == "Blend").length;
     })
   }

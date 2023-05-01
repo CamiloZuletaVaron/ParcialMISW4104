@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let coffee of coffees">
-        <th scope="row">{{coffee.id}}</th>
+        <th class="theader-coffee" scope="row">{{coffee.id}}</th>
         <td>{{coffee.nombre}}</td>
         <td>{{coffee.tipo}}</td>
         <td>{{coffee.region}}</td>
@@ -18,6 +18,6 @@
     </tbody>
   </table>
 
-  <p>Total café de origen: {{origen}}</p>
+  <p>Total café de origen: {{origin}}</p>
   <p>Total café Blend: {{blend}}</p>
   </div>
